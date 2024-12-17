@@ -1,19 +1,13 @@
 package stepdef;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 import pages.LoginPage;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginStepDef extends BaseTest {
 
@@ -41,18 +35,9 @@ public class LoginStepDef extends BaseTest {
         
     }
 
-
     @Then("login page give error message {string}")
     public void loginPageGiveErrorMessage(String errorMessage) {
-        assertTrue(driver.getPageSource().contains(errorMessage));
-        
+        loginPage.validateErrorMessage(errorMessage);
     }
 
-    @Then("login page return an error message {string}")
-    public void loginPageReturnAnErrorMessage(String arg0) {
-    }
-
-    @And("user input wrong password with {string}")
-    public void userInputWrongPasswordWith(String wrongPassword) {
-    }
 }

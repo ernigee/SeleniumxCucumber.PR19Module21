@@ -13,5 +13,9 @@ public class BaseTest {
         options.addArguments("--headless");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
+
+
     }
+
+
 }

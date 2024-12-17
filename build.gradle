@@ -31,7 +31,31 @@ dependencies {
     testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.2'
 
 }
+//test {
+//    useJUnitPlatform()
+//}
 
-test {
-    useJUnitPlatform()
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
+
+task cucumber(){
+    description("Run Cucumber Test")
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'html:reports/test-reports.html',
+                    '--plugin', 'pretty',
+                    '--glue', 'stepdef',
+                    '--tags', "${tags}",
+                    'src/test/resources']
+        }
+    }
 }
