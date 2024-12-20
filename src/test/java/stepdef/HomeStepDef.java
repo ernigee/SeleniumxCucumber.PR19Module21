@@ -1,5 +1,6 @@
 package stepdef;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.HomePage;
 
@@ -14,4 +15,8 @@ public class HomeStepDef extends BaseTest{
 
     }
 
+    @Given("open web login page")
+    public void openWebLoginPage() {
+        homePage.();
+    }
 }

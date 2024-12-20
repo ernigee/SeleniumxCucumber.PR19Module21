@@ -18,7 +18,7 @@ public class LoginPage {
     }
 
     public void goToLoginPage(){
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://saucedemo.com/");
     }
 
     public void inputUserName(String username){

@@ -13,6 +13,7 @@ public class HomePage {
     private WebDriver driver;
 
     public HomePage(WebDriver driver){this.driver =driver;}
+
     public void validateOnHomePage(){
         WebElement productElement = driver.findElement(productTitle);
             assertTrue(productElement.isDisplayed());
@@ -20,4 +21,7 @@ public class HomePage {
     }
 
 
+    public void openBrowser() {
+        driver.get("https://www.saucedemo.com/");
+    }
 }
