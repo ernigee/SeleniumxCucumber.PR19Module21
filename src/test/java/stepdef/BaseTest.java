@@ -14,8 +14,6 @@ public class BaseTest {
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
-
-
     }
 
 

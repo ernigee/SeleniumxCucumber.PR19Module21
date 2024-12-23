@@ -13,6 +13,11 @@ public class LoginStepDef extends BaseTest {
 
     protected LoginPage loginPage;
 
+    public LoginStepDef(){
+        getDriver();
+        this.loginPage= new LoginPage(driver);
+    }
+
     @Given("user is on login page")
     public void userIsOnLoginPage() {
        loginPage = new LoginPage(driver);
