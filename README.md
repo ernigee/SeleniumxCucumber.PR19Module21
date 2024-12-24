@@ -48,18 +48,18 @@ The project follows a modular structure:
 ```
 src
 ├── main
-│   ├── java
-│   │   └── pages
-│   │       └── <PageObjectClasses>.java
-│   └── resources
+│   
 ├── test
 │   ├── java
+│   │   ├── pages
+│   │   │   └── <pagesClass>.java
 │   │   ├── stepdefinitions
 │   │   │   └── <StepDefinitionClasses>.java
 │   │   └── runners
 │   │       └── TestRunner.java
 │   └── resources
 │       └── features
+│           └── <FeatureFiles>.feature
 │           └── <FeatureFiles>.feature
 ```
 
